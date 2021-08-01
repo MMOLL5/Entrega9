@@ -58,18 +58,17 @@ router.post('/productos/guardar/', (req, res) => {
     if(
         !body.title ||
         !body.thumbnail ||
-        /*!body.price*/ //price ||
         typeof body.title != 'string' ||
         typeof body.thumbnail != 'string' ||
-        typeof /*body.price*/price != 'number'
+        typeof price != 'number'
         ){
             return res.status(400).json({
                 msg: 'Se necesitan los datos title, thumbnail y price',
             });
         }
     
-    const prod = new Producto(body.title, /*body.price*/price, body.thumbnail, productos.length);
-    //prod.(body.title, body.price, body.thumbnail, productos.length);
+    const prod = new Producto(body.title, price, body.thumbnail, productos.length);
+
     productos = prod.guardar(productos);
 
     res.status =201;
