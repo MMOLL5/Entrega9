@@ -45,6 +45,8 @@ export class Producto{
         return array;
     }
 
+    /*Modificación de objeto en el array. Recibe un array y parámetros con los valores a cambiar al finalizar 
+    retorna el objeto modificado*/
     actualizar(array, nid, ntitle, nprice, nthumbnail){
         
         let actProducto = {        
@@ -67,6 +69,8 @@ export class Producto{
 
     }
 
+    /*Borra un objeto en el array. Recibe un array y el id y lo elimina del array al finalizar retorna 
+    el objeto borrado*/
     borrar(array, id){
         let pos;
         array.forEach((element, i) => {
